@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %} Index {% endblock title %}
-{% block heading %} Write down your tasks here, {{ name }} 
-BTW, you name has {{name|length}} characters in it. {% endblock heading %}
+{% block heading %} Write down your tasks here, {{ name }} {% endblock heading %}
+{% comment %} BTW, you name has {{name|length}} characters in it. {% endblock heading %} {% endcomment %}
 
 {% block body %}
 {% if success %}

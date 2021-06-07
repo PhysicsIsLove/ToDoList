@@ -18,7 +18,7 @@
         </tr>
     </thead>
     <tbody>
-    {% for task in tasks %}
+    {% for task in tasks reversed %} 
         <tr>
             <th scope="col">{{forloop.counter}}</th>
             <td>{{task.tasktitle}}</td>
