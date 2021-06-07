@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} Index {% endblock title %}
+{% block heading %} Write down your tasks here, {{ name }} 
+BTW, you name has {{name|length}} characters in it. {% endblock heading %}
+
+{% block body %}
+{% if success %}
+<div class = 'container col-md-4'>
+<div class="alert alert-primary" role="alert">
+    <strong>Task Added</strong> Thank you!
+    {% comment %} <button type="button" class="close" data-dismiss="alert" aria-label="Close"> {% endcomment %}
+    {% comment %} <span aria-hidden="true">&times;</span> {% endcomment %}
+    </button>
+</div>
+</div>
+{% endif %}
+<div class="container my-4 col-md-8">
+    <form method='POST' action='/'>
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="tasktitle" class="form-label">Task Title</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='title'>
+        </div>
+        <div class="mb-3">
+            <label for="taskdesc" class="form-label">Task Detail</label>
+            <textarea type="text" class="form-control" id="exampleInputPassword1" name='desc'></textarea>
+        </div>
+        <div class='container'>
+            <button class='btn btn-primary'>Submit</button>
+        </div>
+
+    </form>
+</div>
+{% endblock body %}
+{% block homeactive %} active {% endblock homeactive%}

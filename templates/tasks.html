@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} Tasks {% endblock title %}
+{% block heading %} Your Tasks {% endblock heading %}
+{% block search %} 
+<form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+{% endblock search%}
+
+{% block body %} 
+<div class="container my-3 col-md-8"><table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">S.No.</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for task in tasks %}
+        <tr>
+            <th scope="col">{{forloop.counter}}</th>
+            <td>{{task.tasktitle}}</td>
+            <td>{{task.taskdesc}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table> 
+</div>
+
+{% endblock body %}
+
+{% block tasksactive %} active {% endblock tasksactive %}
